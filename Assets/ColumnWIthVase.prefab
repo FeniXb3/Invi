@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1949284598627355395}
   - component: {fileID: 556767818094220030}
   - component: {fileID: 152077687392010314}
+  - component: {fileID: 3005375039728613193}
   m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
@@ -168,6 +169,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3005375039728613193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257173065246572905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d3be9bca4f11c2989846142f47911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPositon: {x: 0, y: 0, z: 0}
+  startingRotationAngles: {x: 0, y: 0, z: 0}
 --- !u!1 &6730019128714517395
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +196,7 @@ GameObject:
   - component: {fileID: 8180703643115228957}
   - component: {fileID: 2159708897809083438}
   - component: {fileID: 357584235746220819}
+  - component: {fileID: 3764906529629554296}
   m_Layer: 6
   m_Name: Column
   m_TagString: Untagged
@@ -303,3 +319,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3764906529629554296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6730019128714517395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d3be9bca4f11c2989846142f47911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPositon: {x: 0, y: 0, z: 0}
+  startingRotationAngles: {x: 0, y: 0, z: 0}
