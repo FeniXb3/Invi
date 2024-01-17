@@ -10,12 +10,13 @@ public class ImpactOnHit : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
-            Debug.Log(colliders.Length);
+            
             foreach (Collider hitCollider in colliders)
             {
                 if (hitCollider.gameObject.CompareTag("Enemy"))
                 {
                     Debug.Log(hitCollider.gameObject.name);
+                    hitCollider.gameObject.SendMessage("GoTo", transform);
                 }
             }
         }
