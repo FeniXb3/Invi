@@ -47,8 +47,9 @@ GameObject:
   - component: {fileID: 556767818094220030}
   - component: {fileID: 152077687392010314}
   - component: {fileID: 3005375039728613193}
+  - component: {fileID: 7259579461701939078}
   m_Layer: 6
-  m_Name: Capsule
+  m_Name: Vase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,6 +184,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPositon: {x: 0, y: 0, z: 0}
   startingRotationAngles: {x: 0, y: 0, z: 0}
+--- !u!114 &7259579461701939078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257173065246572905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0592d48e97c39c7966da3f47f7e3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 500
 --- !u!1 &6730019128714517395
 GameObject:
   m_ObjectHideFlags: 0
