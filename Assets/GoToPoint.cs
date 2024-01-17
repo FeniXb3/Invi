@@ -22,8 +22,14 @@ public class GoToPoint : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            shouldMove = !shouldMove;
-            chase = shouldMove;
+            GameObject player = GameObject.FindWithTag("Player");
+
+            if (player != null)
+            {
+                targetTransform = player.transform;
+                shouldMove = !shouldMove;
+                chase = shouldMove;
+            }
         }
 
         if (targetTransform == null)
@@ -45,6 +51,7 @@ public class GoToPoint : MonoBehaviour
                 agent.isStopped = true;
                 shouldMove = false;
                 chase = false;
+                targetTransform = null;
                 Debug.Log("Destination reached");
             }
         }
