@@ -22,14 +22,7 @@ public class GoToPoint : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            GameObject player = GameObject.FindWithTag("Player");
-
-            if (player != null)
-            {
-                targetTransform = player.transform;
-                shouldMove = !shouldMove;
-                chase = shouldMove;
-            }
+            TriggerPlayerChasing();
         }
 
         if (targetTransform == null)
@@ -46,6 +39,7 @@ public class GoToPoint : MonoBehaviour
             }
 
             float distance = (transform.position - agent.destination).magnitude;
+            Debug.Log($"Distance: {distance}");
             if (distance <= stoppingDistance)
             {
                 agent.isStopped = true;
@@ -68,5 +62,17 @@ public class GoToPoint : MonoBehaviour
         targetTransform = target;
         shouldMove = true;
         chase = false;
+    }
+
+    void TriggerPlayerChasing()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+
+        if (player != null)
+        {
+            targetTransform = player.transform;
+            shouldMove = !shouldMove;
+            chase = shouldMove;
+        }
     }
 }

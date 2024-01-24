@@ -1459,7 +1459,7 @@ Transform:
   m_GameObject: {fileID: 2141300574}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.67, y: 0.5, z: 10.24}
+  m_LocalPosition: {x: -7.97, y: 0.5, z: 8.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1503,6 +1503,7 @@ MonoBehaviour:
   targetTransform: {fileID: 1762682260}
   shouldMove: 0
   chase: 0
+  stoppingDistance: 1
 --- !u!114 &2141300581
 MonoBehaviour:
   m_ObjectHideFlags: 0

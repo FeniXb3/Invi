@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class ImpactOnHit : MonoBehaviour
@@ -20,5 +21,11 @@ public class ImpactOnHit : MonoBehaviour
                 }
             }
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
