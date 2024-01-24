@@ -28,4 +28,9 @@ public class ImpactOnHit : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
+
+    void React()
+    {
+        Debug.Log("Vase reached");
+    }
 }

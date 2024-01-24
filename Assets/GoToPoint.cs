@@ -45,6 +45,8 @@ public class GoToPoint : MonoBehaviour
                 agent.isStopped = true;
                 shouldMove = false;
                 chase = false;
+                targetTransform.gameObject.SendMessage("React");
+
                 targetTransform = null;
                 Debug.Log("Destination reached");
             }
