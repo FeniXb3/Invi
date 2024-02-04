@@ -58,6 +58,27 @@ public class GoToPoint : MonoBehaviour
 
     }
 
+    void FixedUpdate()
+    {
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+    
+        if (Physics.Raycast(transform.position, fwd, out RaycastHit hitInfo, 100) && hitInfo.transform.gameObject.CompareTag("Player"))
+        {
+            targetTransform = hitInfo.transform;
+            shouldMove = true;
+            chase = true;
+            Debug.Log("raycast");
+            Debug.DrawRay(transform.position, fwd * hitInfo.distance, Color.red);
+        }
+        else
+        {
+            targetTransform = null;
+            shouldMove = false;
+            chase = false;
+            Debug.Log("raycast didn't hit player");
+        }
+    }
+
     void GoTo(Transform target)
     {
         Debug.Log(agent.isStopped);
