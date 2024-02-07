@@ -61,14 +61,37 @@ public class GoToPoint : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
+
+        Transform playerTransform = null;
     
-        if (Physics.Raycast(transform.position, fwd, out RaycastHit hitInfo, 100) && hitInfo.transform.gameObject.CompareTag("Player"))
+        RaycastHit[] result = Physics.SphereCastAll(transform.position, 2, fwd);
+        foreach (RaycastHit item in result)
+        {
+            if (item.transform.gameObject.CompareTag("Player"))
+            {
+                playerTransform = item.transform;
+            }
+        }
+
+        if (playerTransform == null)
+        {
+            return;
+        }
+
+
+        Vector3 direction = playerTransform.position - transform.position;
+        direction.y = playerTransform.position.y;
+
+        Debug.Log($"Vector: {direction.magnitude} | Normalized: {direction.normalized.magnitude}");
+        
+        Debug.DrawRay(transform.position, direction, Color.red);
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, 100) && hitInfo.transform.gameObject.CompareTag("Player"))
         {
             targetTransform = hitInfo.transform;
             shouldMove = true;
             chase = true;
             Debug.Log("raycast");
-            Debug.DrawRay(transform.position, fwd * hitInfo.distance, Color.red);
+            Debug.DrawRay(transform.position, direction.normalized * hitInfo.distance, Color.red);
         }
         else
         {
