@@ -10,6 +10,7 @@ public class GoToPoint : MonoBehaviour
     public bool shouldMove;
     public bool chase;
     public float stoppingDistance = 1;
+    public BoolVariable playerVisibility;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,11 @@ public class GoToPoint : MonoBehaviour
 
         if (shouldMove)
         {
+            if (!playerVisibility.value)
+            {
+                chase = false;
+            }
+
             if (chase || (!chase && agent.isStopped))
             {
                 agent.destination = targetTransform.position;
@@ -60,6 +66,11 @@ public class GoToPoint : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!playerVisibility.value)
+        {
+            return;
+        }
+
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
         Transform playerTransform = null;
