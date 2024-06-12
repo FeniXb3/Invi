@@ -11,6 +11,7 @@ public class GoToPoint : MonoBehaviour
     public bool chase;
     public float stoppingDistance = 1;
     public BoolVariable playerVisibility;
+    public CustomEvent targetReachedEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +52,8 @@ public class GoToPoint : MonoBehaviour
                 agent.isStopped = true;
                 shouldMove = false;
                 chase = false;
-                targetTransform.gameObject.SendMessage("React");
+                // targetTransform.gameObject.SendMessage("React");
+                targetReachedEvent.RaiseEvent();
 
                 targetTransform = null;
                 Debug.Log("Destination reached");
@@ -113,7 +115,7 @@ public class GoToPoint : MonoBehaviour
         }
     }
 
-    void GoTo(Transform target)
+    public void GoTo(Transform target)
     {
         Debug.Log(agent.isStopped);
         targetTransform = target;
